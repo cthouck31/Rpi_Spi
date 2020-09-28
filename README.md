@@ -78,5 +78,13 @@ finished:
 };
 ```
 
+# Testing
+The library comes with a simple unit test for verifying the SPI interface and configuration.
+
+The test opens the default SPI port (/dev/spidev0.0) and transfers a 3-byte packet. The SPI interface
+should be setup in loopback mode (connect the MOSI pin to the MISO pin). See [Raspberry Pi SPI](https://pinout.xyz/pinout/spi#)
+page for details on the Raspberry Pi SPI GPIO pins.
+
+
 # Contributing
 Feel free to contribute! The idea of the project is to provide a simple SPI interface; the simpler, the better.
