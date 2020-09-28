@@ -166,7 +166,7 @@ Rpi_Spi_getWordLen(
  * @param[in]  in   SPI transmit data.
  * @param[in]  len  Number of bytes to transfer.
  *
- * @returns 0 on success, error otherwise.
+ * @returns Number of bytes transferred.
 */
 int32_t
 Rpi_Spi_transfer(

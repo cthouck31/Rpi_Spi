@@ -342,7 +342,7 @@ Rpi_Spi_getWordLen(
  * @param[in]  in   SPI transmit data.
  * @param[in]  len  Number of bytes to transfer.
  *
- * @returns 0 on success, error otherwise.
+ * @returns Number of bytes transferred (<len on error).
 */
 int32_t
 Rpi_Spi_transfer(
@@ -353,13 +353,18 @@ Rpi_Spi_transfer(
 {
     int32_t status = 0;
     struct spi_ioc_transfer xfer;
+    // Check for valid device and variables.
     if (rspi == NULL)
     {
-        return -1;
+        return 0;
+    }
+    if (rspi->fd < 0)
+    {
+        return 0;
     }
     if (out == NULL || in == NULL)
     {
-        return -2;
+        return 0;
     }
 
     // Setup transfer.
