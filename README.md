@@ -4,6 +4,25 @@ Simple Raspberry PI SPI C library using base Linux SPI driver (spidev).
 # Description
 The __Rpi_Spi__ library is a simple wrapper for the Linux SPI driver (spidev). The library targets the generic Raspberry Pi platform.
 
+The goal was to abstract the required calls to the SPI driver in a simple class.
+
+# Building
+The Cmake utilities are used for building the package (cmake>=3.13).
+
+```bash
+cd Rpi_Spi
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+
+# Optional test (must be setup in loopback mode to pass).
+# make test
+
+sudo make install
+```
+
+# Usage
 The following code outlines the basic usage of the __Rpi_Spi__ library:
 
 ```c
